@@ -39,7 +39,7 @@
 // @grant           GM_registerMenuCommand
 // @updateURL       https://github.com/YePpHa/YouTubeCenter/raw/master/dist/YouTubeCenter.meta.js
 // @downloadURL     https://github.com/YePpHa/YouTubeCenter/raw/master/dist/YouTubeCenter.user.js
-// @updateVersion   155
+// @updateVersion   156
 // @run-at          document-start
 // @priority        9001
 // ==/UserScript==

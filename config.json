@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "shared": {
+      "namespace": "http://www.facebook.com/YouTubeCenter",
+      "author": "Jeppe Rune Mortensen <jepperm@gmail.com>",
+      "version": "2.1.7",
+      "updateVersion": 156,
+      "contributionURL": "https://github.com/YePpHa/YouTubeCenter/wiki/Donate"
+    },
+    "stable-chrome-webstore": {
+      "id": "YePpHaCenter",
+      "name": "YePpHa Center for YouTube",
+      "updateURL": "",
+      "downloadURL": ""
+    },
+    "stable": {
+      "id": "YouTubeCenter",
+      "name": "YouTube Center",
+      "updateURL": "https://yeppha.github.io/downloads/YouTubeCenter.meta.js",
+      "downloadURL": "https://yeppha.github.io/downloads/YouTubeCenter.user.js"
+    },
+    "dev": {
+      "id": "YouTubeCenter",
+      "name": "YouTube Center",
+      "updateURL": "https://github.com/YePpHa/YouTubeCenter/raw/master/dist/YouTubeCenter.meta.js",
+      "downloadURL": "https://github.com/YePpHa/YouTubeCenter/raw/master/dist/YouTubeCenter.user.js"
+    }
+  },
+  "images": {
+    
+  },
+  "crowdin": {
+    "keyFile": "./crowdin.key",
+    "identifier": "youtube-center",
+    "output": "./language.json",
+    "base": "./base-english.json",
+    "server-base": "/base.json",
+    "base-language": "en-US",
+    "jar": "./CrowdinManager.jar"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "youtube-center",
+  "version": "1.0.0",
+  "description": "YouTube Center is a userscript designed to expand the functionality of YouTube. It includes the ability to download the video you're watching, auto selecting your preferred video quality and much more.",
+  "main": "main.js",
+  "author": "Jeppe Rune Mortensen <jepperm@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:YePpHa/YouTubeCenter.git"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-compress": "^0.10.0",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-exec": "^0.4.5",
+    "grunt-pattern-replace": "^0.2.0",
+    "grunt-replace": "^0.7.8",
+    "grunt-run-java": "^0.1.1"
+  }
+}
