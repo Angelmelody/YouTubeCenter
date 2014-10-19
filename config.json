@@ -1,27 +1,83 @@
 {
   "metadata": {
-    "shared": {
+    "default": {
+      "id": "YouTubeCenter",
+      "name": "YouTube Center",
       "namespace": "http://www.facebook.com/YouTubeCenter",
       "author": "Jeppe Rune Mortensen <jepperm@gmail.com>",
+      "description": "YouTube Center contains all kind of different useful functions which makes your visit on YouTube much more entertaining.",
+      "icon": "https://raw.github.com/YePpHa/YouTubeCenter/master/assets/icon48.png",
+      "icon64": "https://raw.github.com/YePpHa/YouTubeCenter/master/assets/icon64.png",
+      "domain": [
+        "yeppha.github.io",
+        "youtube.com",
+        "www.youtube.com",
+        "gdata.youtube.com",
+        "apis.google.com",
+        "plus.googleapis.com",
+        "googleapis.com",
+        "raw.github.com",
+        "raw2.github.com",
+        "raw.githubusercontent.com",
+        "s.ytimg.com"
+      ],
+      "match": [
+        "http://www.youtube.com/*",
+        "https://www.youtube.com/*",
+        "http://youtube.com/*",
+        "https://youtube.com/*",
+        "https://yeppha.github.io/downloads/YouTubeCenter.meta.js",
+        "http://s.ytimg.com/yts/jsbin/*",
+        "https://s.ytimg.com/yts/jsbin/*",
+        "https://raw.github.com/YePpHa/YouTubeCenter/master/*",
+        "https://raw.githubusercontent.com/YePpHa/YouTubeCenter/master/*",
+        "http://raw.github.com/YePpHa/YouTubeCenter/master/*",
+        "http://raw.githubusercontent.com/YePpHa/YouTubeCenter/master/*",
+        "http://apis.google.com/*/widget/render/comments?*",
+        "https://apis.google.com/*/widget/render/comments?*",
+        "http://plus.googleapis.com/*/widget/render/comments?*",
+        "https://plus.googleapis.com/*/widget/render/comments?*"
+      ],
+      "include": [
+        "http://www.youtube.com/*",
+        "https://www.youtube.com/*",
+        "http://youtube.com/*",
+        "https://youtube.com/*",
+        "http://apis.google.com/*/widget/render/comments?*",
+        "https://apis.google.com/*/widget/render/comments?*",
+        "http://plus.googleapis.com/*/widget/render/comments?*",
+        "https://plus.googleapis.com/*/widget/render/comments?*"
+      ],
+      "exclude": [
+        "http://apiblog.youtube.com/*",
+        "https://apiblog.youtube.com/*",
+        "http://*.youtube.com/subscribe_embed?*",
+        "https://*.youtube.com/subscribe_embed?*"
+      ],
+      "grant": [
+        "GM_getValue",
+        "GM_setValue",
+        "GM_xmlhttpRequest",
+        "GM_log",
+        "GM_registerMenuCommand",
+        "unsafeWindow"
+      ],
+      "run-at": "document-start",
+      "contributionURL": "https://github.com/YePpHa/YouTubeCenter/wiki/Donate",
+      "updateURL": "https://yeppha.github.io/downloads/YouTubeCenter.meta.js",
+      "downloadURL": "https://yeppha.github.io/downloads/YouTubeCenter.user.js",
       "version": "2.1.7",
-      "updateVersion": 156,
-      "contributionURL": "https://github.com/YePpHa/YouTubeCenter/wiki/Donate"
+      "updateVersion": 156
     },
-    "stable-chrome-webstore": {
+    "chrome-webstore": {
       "id": "YePpHaCenter",
       "name": "YePpHa Center for YouTube",
-      "updateURL": "",
-      "downloadURL": ""
+      "updateURL": null,
+      "downloadURL": null
     },
-    "stable": {
-      "id": "YouTubeCenter",
-      "name": "YouTube Center",
-      "updateURL": "https://yeppha.github.io/downloads/YouTubeCenter.meta.js",
-      "downloadURL": "https://yeppha.github.io/downloads/YouTubeCenter.user.js"
-    },
-    "dev": {
-      "id": "YouTubeCenter",
-      "name": "YouTube Center",
+    "dev-version": {
+      "id": "YouTubeCenterDevVersion",
+      "name": "YouTube Center Developer Version",
       "updateURL": "https://github.com/YePpHa/YouTubeCenter/raw/master/dist/YouTubeCenter.meta.js",
       "downloadURL": "https://github.com/YePpHa/YouTubeCenter/raw/master/dist/YouTubeCenter.user.js"
     }
@@ -37,5 +93,6 @@
     "server-base": "/base.json",
     "base-language": "en-US",
     "jar": "./CrowdinManager.jar"
-  }
+  },
+  "language": "{}"
 }

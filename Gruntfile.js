@@ -18,6 +18,17 @@ module.exports = function(grunt) {
     return cmd;
   }
   
+  function appendMetadata(metedata) {
+    for (var key in metadata) {
+      if (metadata.hasOwnProperty(key)) {
+        metadataConfig[key] = metadata[key];
+      }
+    }
+  }
+  
+  /* External libs */
+  var metadata = require("./vendor/nodejs/metadata.js");
+  
   /* Libraries */
   grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks("grunt-contrib-uglify");
@@ -32,6 +43,10 @@ module.exports = function(grunt) {
   /* Loading YouTube Center configurations */
   var appConfig = grunt.file.readJSON("./config.json");
   
+  /* Variables */
+  var metadataConfig = appConfig.metadata.default;
+  
+  /* Crowdin START */
   var crowdinUpdateArgs = [
     "-Dfile.encoding=UTF-8",
     "-jar", appConfig.crowdin.jar,
@@ -52,6 +67,7 @@ module.exports = function(grunt) {
     "--minify",
     "--o", appConfig.crowdin.output
   ];
+  /* Crowdin END */
   
   grunt.initConfig({
     "exec": {
@@ -61,6 +77,75 @@ module.exports = function(grunt) {
       "upload-language": {
         cmd: createCommandString("java", crowdinUploadArgs)
       }
+    },
+    "copy": {
+      "content-script": {
+        "files": [
+          { expand: true, cwd: "./src", dest: "./build/", src: ["main.js"] }
+        ]
+      }
+    },
+    "concat": {
+      "userscript": {
+        "files": {
+          "./dist/YouTubeCenter.user.js": [ "./build/license.js", "./build/metadata.js", "./build/main.js" ]
+        }
+      }
+    },
+    "clean": {
+      "pre": ["./build/", "./dist/"],
+      "after": ["./build/"]
     }
   });
+  
+  grunt.registerTask("build:license", function(){
+    var content = grunt.file.read("./LICENSE");
+    
+    content = "/**\r\n" + content + "\r\n**/\r\n";
+    
+    grunt.file.write("./build/license.js", content);
+  });
+  
+  grunt.registerTask("build:userscript-meta", function(){
+    var content = metadata.createUserScript(metadataConfig);
+    grunt.file.write("./build/metadata.js", content);
+  });
+  
+  grunt.registerTask("config:replace", function(){
+    appConfig["language"] = grunt.file.read("./language.json");
+    
+    grunt.file.recurse("./build/", function(abspath, rootdir, subdir, filename){
+      var ext = filename.substring(filename.lastIndexOf("."));
+      
+      if (ext === "js") {
+        var content = grunt.file.read(abspath);
+        content = content.replace(/\$\{([0-9a-zA-Z\.\-\_]+)\}/g, function(match, $1){
+          if ($1 in appConfig) {
+            return appConfig[$1];
+          } else {
+            return "${" + $1 + "}";
+          }
+        });
+        grunt.file.write(abspath, content);
+      }
+    });
+  });
+  
+  grunt.registerTask("userscript", [
+    "clean:pre",
+    "copy:content-script",
+    "build:license",
+    "build:userscript-meta",
+    "config:replace",
+    "concat:userscript",
+    "clean:after"
+  ]);
+  
+  grunt.registerTask("language-download", [
+    "exec:build-language"
+  ]);
+  
+  grunt.registerTask("language-upload", [
+    "exec:upload-language"
+  ]);
 };
