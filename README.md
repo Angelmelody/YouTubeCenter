@@ -89,4 +89,48 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+插件:
+Download
+
+YouTube Center is available as the following extensions: Userscript, Firefox, Chrome, Opera, Safari and Maxthon.
+
+Current version: 2.1.7.
+Userscript
+
+Standard: yeppha.github.io
+OpenUserJS: https://openuserjs.org/scripts/YePpHa/YouTube_Center
+Mirror: Mega
+Firefox Extension
+
+AMO: https://addons.mozilla.org/en-us/firefox/addon/youtube-center/
+Standard: yeppha.github.io
+Mirror: Mega
+Mirror: computerbild.de
+Chrome & Opera 15+ Extension
+
+This is for both Chrome and Opera.
+
+Chrome Webstore Page: page (taken down by Google, currently being reviewed)
+Opera Extension Page: https://addons.opera.com/en/extensions/details/youtube-center/
+Standard: yeppha.github.io
+Mirror: Mega
+Mirror: computerbild.de
+Opera 14 or older Extension
+
+Standard: yeppha.github.io
+Mirror: Mega
+Safari Extension
+
+Standard: yeppha.github.io
+Mirror: Mega
+Maxthon Extension
+
+Extension Page (Maintained by KDASOFT): http://extension.maxthon.com/detail/index.php?view_id=1201
+Standard: yeppha.github.io
+Mirror: Mega
+Internet Explorer
+
+How to install YouTube Center on Internet Explorer
+Latest Changelog
  
